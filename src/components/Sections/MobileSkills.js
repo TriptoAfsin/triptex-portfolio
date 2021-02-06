@@ -12,7 +12,7 @@ function MobileSkills() {
                 <p className="pad1 txt-lg">🚧 Node, cPanel</p>
                 <p className="pad1 txt-lg">📱 Android Native, Flutter</p>
                 <p className="pad1 txt-lg">💾 Linux, Cli, Firebase,Heroku</p>
-                <p className="pad1 txt-lg">🪐 Powerpoint, Illustrator</p>
+                <p className="pad1 txt-lg">🪐 Powerpoint, Adobe Illustrator</p>
         </div>
         </div>
         </React.Fragment>

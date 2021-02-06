@@ -4,7 +4,7 @@ import SocialSection from '../components/Sections/SocialSection'
 function Contact() {
     return (
         <React.Fragment>
-            <h1>Conatct Me</h1>
+            <h1>Get in touch</h1>
             <div className="center-self">
             <SocialSection></SocialSection>
             </div>
