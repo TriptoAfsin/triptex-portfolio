@@ -13,6 +13,20 @@
   }
 }
 
+/*Responsive Hiding*/
+@media(max-width: 600px){
+  .hide-on-mobile{
+      display: none;
+  }
+  .hide-on-desktop{
+      display: flex;
+  }
+}
+
+.hide-on-desktop{
+  display: none;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
