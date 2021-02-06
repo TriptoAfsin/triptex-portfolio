@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import DataProvider from '../components/DataHandler/DataProvider'
 import '../components/css/loader.css'
-import { Link } from 'react-router-dom'
 
 
 function Projects() {
@@ -42,18 +41,6 @@ function Projects() {
         }   
     }
 
-    /*
-    //search Handler
-    const  handleSearch = (e) => {
-        setQuery(e.target.value)
-        console.log("handleSearch Called")
-        let libs = repoData;
-        searchQuery(libs)
-        console.log(query)
-    }
-    */
-
-
     const outputHtml = matches =>{
         if(matches.length > 0){
             const html = matches.map(match => `
@@ -88,7 +75,6 @@ function Projects() {
         )
     }
     else{
-        const colorArr = ['greyGradient', 'greyGradient2', 'greyGradient3', 'greyGradient4']
         return(
             <React.Fragment>
                <div>
@@ -110,6 +96,9 @@ function Projects() {
                         }
                     </div>
                 </div> 
+                <div className="row pad4 center-self mt4">
+                        <a href="https://github.com/TriptoAfsin" className="button center-self txt-lg bold blueGradient" target="_blank">👉 Github</a>
+                </div>
         </React.Fragment>
         )
     }
