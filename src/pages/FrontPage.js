@@ -1,4 +1,5 @@
 import React from 'react'
+import { useState, useEffect } from 'react';
 
 import Typewriter from 'typewriter-effect'; // more: https://www.npmjs.com/package/typewriter-effect
 import EducationSec from '../components/Sections/EducationSec';
@@ -8,6 +9,9 @@ import SocialSection from '../components/Sections/SocialSection';
 
 import  {Link} from 'react-router-dom'
 import Footer from '../components/layout/Footer';
+import MobileSkills from '../components/Sections/MobileSkills';
+
+import useWindowDimensions from '../components/Hooks/ResizeHandler'
 
 
 
@@ -16,7 +20,12 @@ const strings = ["a Freelance Webdeveloper", "an Engineering Student", "a Learne
 
 
 
+
+
+
 function FrontPage() {
+    const { height, width } =  useWindowDimensions();
+
     return (
         <React.Fragment>
             <div className="row mt4 center-self">
@@ -61,8 +70,8 @@ function FrontPage() {
             </div>
             <div className="row">
             <div className="width50 mb4">
-                <div className="hide-on-mobile">
-                <Skills></Skills>
+                <div className="">
+                    {width >= 820 ? <Skills></Skills> : <MobileSkills></MobileSkills>}
                 </div>
             </div>
             <div className="width50 mb4">

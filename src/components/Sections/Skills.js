@@ -2,6 +2,7 @@ import React from 'react'
 
 import "../../App.css";
 
+
 function Skills() {
     return (
         <div className="column">
@@ -17,7 +18,7 @@ function Skills() {
                 <li>Powerpoint, Illustrator</li>
             </ul>
         </div>
-        <div className="row pad4 center-self">
+        <div className="row pad4 center-self hide-on-mobile mt4">
                 <p className="txt-xl bold pad4 hide-on-mobile">Frontend: </p>
                 <a href="" className="mr1 hide-on-mobile"><img src="./imgs/skills/html5.png" alt="HTML" width="48px"/></a>
                 <a href="" className="mr1 hide-on-mobile"><img src="./imgs/skills/css-3.svg" alt="CSS" width="48px"/></a>
