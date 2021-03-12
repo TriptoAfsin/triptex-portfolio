@@ -5,12 +5,11 @@ import axios from 'axios'
 //kinda similar article: https://dev.to/rikurouvila/clean-and-reusable-data-fetching-in-react-components-165
 //more on axios: https://blog.logrocket.com/how-to-make-http-requests-like-a-pro-with-axios/
 
-function DataProvider() {
+function DataProvider(url) {
 
     console.log("DataProvider Called")
     const[dbData, setDbData] = useState(null)
     //const [loading, setLoading] = useState(true)
-    const url = "https://triptoafsin.github.io/API-Host/myProjects.json"
 
      //pulling data 
 

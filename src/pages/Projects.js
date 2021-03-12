@@ -11,7 +11,7 @@ function Projects() {
 
     
 
-    const repoData = DataProvider()
+    const repoData = DataProvider("https://triptoafsin.github.io/API-Host/myProjects.json")
     console.log(repoData)
 
     useEffect(

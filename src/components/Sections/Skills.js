@@ -6,7 +6,7 @@ import "../../App.css";
 function Skills() {
     return (
         <div className="column">
-        <div className="center-self mt4 pad4 blueGradient">
+        <div className="center-self mt4 pad4 aquaGradient">
                 <p className="txt-xxxl bold">Skills</p>
         </div>
         <div className="row pad4 center-self hide-on-mobile mt4">
