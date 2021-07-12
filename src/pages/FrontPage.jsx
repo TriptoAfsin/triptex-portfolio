@@ -1,12 +1,13 @@
 import React from 'react'
-//import { useState, useEffect } from 'react';
-//import {StaticImage} from 'gatsby-plugin-image'
-import {Helmet} from "react-helmet";
-import Typewriter from 'typewriter-effect'; // more: https://www.npmjs.com/package/typewriter-effect
+import { Helmet } from "react-helmet";
+import Particles from 'react-particles-js'; //particles js
+
+//sections
 import EducationSec from '../components/Sections/EducationSec';
 import PersonalSec from '../components/Sections/PersonalSec';
 import Skills from '../components/Sections/Skills';
 import SocialSection from '../components/Sections/SocialSection';
+import TypeWriterSec from '../components/Sections/TypeWriterSec';
 
 //import  {Link} from 'react-router-dom'
 import Footer from '../components/layout/Footer';
@@ -19,10 +20,12 @@ import ProjectsSec from '../components/Sections/ProjectsSec';
 import devWebpImg from '../../imgs/dev.webp'
 import devjpgImg from '../../imgs/dev.jpg'
 
+//additional css
+import '../components/css/additionalCss.css'
 
-const strings = ["a Freelance Webdeveloper", "an Engineering Student", "a Learner", "a Teacher"];
 const pageTitle = "Afshin Nahian Tripto";
-
+const devName = "Afshin Nahian Tripto";
+const showParticles = true;
 
 function FrontPage() {
     const { height, width } = useWindowDimensions();
@@ -34,6 +37,48 @@ function FrontPage() {
                 <title>{pageTitle}</title>
             </Helmet>
             <div className="content">
+                {width >= 620 && showParticles ?
+                    <Particles className="particleCss"
+                        params={
+                            {
+                                particles: {
+                                    number: {
+                                        value: 25
+                                    }
+                                },
+                                "interactivity": {
+                                    "events": {
+                                        "onclick": {
+                                            "enable": true,
+                                            "mode": "repulse"
+                                        }
+                                    }
+                                },
+                            }
+                        }
+                    />
+                    :
+                    <Particles className="particleCss"
+                        params={
+                            {
+                                particles: {
+                                    number: {
+                                        value: 8
+                                    },
+                                    collisions: true,
+                                },
+                                "interactivity": {
+                                    "events": {
+                                        "onclick": {
+                                            "enable": true,
+                                            "mode": "repulse"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    />
+                }
                 <div className="row mt4 center-self">
                     <div className="column float-left center-self">
                         <picture>
@@ -42,31 +87,9 @@ function FrontPage() {
                         </picture>
                     </div>
                     <div className="column float-right pad4">
-                        <p className="txt-xxl left-txt bold center-txt">Afshin Nahian Tripto</p>
-
+                        <p className="txt-xxl left-txt bold center-txt">{devName}</p>
                         <div className="txt-xl">
-                            <Typewriter
-                                onInit={(typewriter) => {
-                                    typewriter.typeString(`I'm ${strings[0]}`)
-                                        .callFunction(() => {
-                                            console.log('String typed out!');
-                                        })
-                                        .pauseFor(2000)
-                                        .deleteChars(strings[0].length)
-                                        .typeString(`${strings[1]}`)
-                                        .pauseFor(2000)
-                                        .deleteChars(strings[1].length)
-                                        .typeString(`${strings[2]}`)
-                                        .pauseFor(2000)
-                                        .deleteChars(strings[2].length)
-                                        .deleteAll()
-                                        .typeString(`Webdeveloper || Student || Learner`)
-                                        .callFunction(() => {
-                                            console.log("Typing Done !")
-                                        })
-                                        .start();
-                                }}
-                            />
+                            <TypeWriterSec />
                         </div>
                         <div className="hide-on-mobile">
                             <SocialSection></SocialSection>
@@ -81,7 +104,7 @@ function FrontPage() {
                         <EducationSec></EducationSec>
                     </div>
                 </div>
-
+                
 
                 <div className="row">
                     <div className="width50 mb4">

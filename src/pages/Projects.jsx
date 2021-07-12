@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import {Helmet} from "react-helmet";
 import DataProvider from '../components/DataHandler/DataProvider'
 import '../components/css/loader.css'
+import '../components/css/additionalCss.css'
 const pageTitle = "Projects - TriptoAfsin";
 
 function Projects() {
@@ -42,9 +43,15 @@ function Projects() {
     const outputHtml = matches => {
         if (matches.length > 0) {
             const html = matches.map(match => `
-            <div class="card greyGradient floatIn" key={element.link}>
-                    <p class="card-title txt-xxl">${match.name}</p>
+            <div class="card-vertical greyGradient floatIn" key={element.link}>
+                    <img src=${match.img} alt="" class="card-img"/>
+                    <p class="card-title txt-xl">${match.name}</p>
                     <p class="card-txt">${match.about}</p>
+                    ${match.techUsed.map(tech => {
+                        return(
+                            `<p class="green rounded tag mt1 ml1">${tech}</p>`
+                        )
+                    })}
                     <a class="card-btn pad2 right blue" href=${match.link} target="_blank">Learn more...</a>
                 </div>
             `).join('');
@@ -92,10 +99,20 @@ function Projects() {
                             repoData.map(element => {
                                 return (
 
-                                    <div className={"card floatIn greyGradient"} key={element.link}>
-                                        <p className="card-title txt-xxl">{element.name}</p>
+                                    <div className={"card-vertical floatIn greyGradient"} key={element.link}>
+                                        <img src={element.img} alt="" className="card-img"/>
+                                        <p className="card-title txt-xl">{element.name}</p>
+                                        <div className="mt4">
                                         <p className="card-txt">{element.about}</p>
+                                            {element.techUsed.map(tech => {
+                                                return(
+                                                    <p className="green rounded tag mt1 ml1">{tech}</p>
+                                                )
+                                            })}
+                                        
                                         <a className="card-btn pad2 right blue" href={element.link} target="_blank">Learn more...</a>
+                                        </div>
+                                        
                                     </div>
                                 )
                             })
