@@ -2,10 +2,13 @@ import React from 'react'
 import useWindowDimensions from '../Hooks/ResizeHandler'
 import { SocialIcon } from 'react-social-icons';
 
-const githubUrl = 'https://github.com/TriptoAfsin';
-const facebookUrl = 'https://www.facebook.com/Tripto.Afsin';
-const LikedinUrl = 'https://www.linkedin.com/in/triptoafsin/';
-const mailUrl = 'mailto:AfsinTripto@gmail.com';
+//config import 
+import portfolioInfo from '../../portfolioConfig';
+
+const githubUrl = portfolioInfo.socialLinks.socialGithub;
+const facebookUrl = portfolioInfo.socialLinks.socialFacebook;
+const LikedinUrl = portfolioInfo.socialLinks.socialLinkedin;
+const mailUrl = portfolioInfo.socialLinks.socialMail;
 
 function SocialSection() {
 

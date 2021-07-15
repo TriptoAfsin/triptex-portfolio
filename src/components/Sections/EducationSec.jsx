@@ -1,4 +1,6 @@
 import React from 'react'
+//config import 
+import portfolioInfo from '../../portfolioConfig'
 
 function EducationSec() {
     return (
@@ -6,8 +8,8 @@ function EducationSec() {
                     <p className="bold txt-xxl mt2">Educational background</p>
                     <div className="ml2 txt-lg mt4">
                         <p className="mt1 mb1">👨‍🎓 Bsc: Industrial & Production Engineering(<a href="https://www.butex.edu.bd/">BUTEX</a>)</p>
-                        <p className="mt1 mb1">🙍‍♂️ HSC: Science (GPA: 5.00)</p>
-                        <p className="mt1 mb4">👦 SSC: Science (GPA: 5.00)</p>
+                        <p className="mt1 mb1">{portfolioInfo.educationalSection[1]}</p>
+                        <p className="mt1 mb4">{portfolioInfo.educationalSection[2]}</p>
                     </div>        
         </div>
     )

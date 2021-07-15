@@ -1,7 +1,10 @@
 import React from 'react'
 import Typewriter from 'typewriter-effect'; // more: https://www.npmjs.com/package/typewriter-effect
 
-const strings = ["a Freelance Webdeveloper", "an Engineering Student", "a Learner", "a Teacher"];
+//config import
+import portfolioInfo from '../../portfolioConfig';
+
+const strings = portfolioInfo.typeWriterStringsArr
 
 function TypeWriterSec() {
     return (

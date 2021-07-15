@@ -2,6 +2,9 @@ import React from 'react'
 import { Helmet } from "react-helmet";
 import Particles from 'react-particles-js'; //particles js
 
+//config import
+import portfolioConfig from '../portfolioConfig';
+
 //sections
 import EducationSec from '../components/Sections/EducationSec';
 import PersonalSec from '../components/Sections/PersonalSec';
@@ -23,9 +26,9 @@ import devjpgImg from '../../imgs/dev.jpg'
 //additional css
 import '../components/css/additionalCss.css'
 
-const pageTitle = "Afshin Nahian Tripto";
-const devName = "Afshin Nahian Tripto";
-const showParticles = true;
+const pageTitle = portfolioConfig.pageTitle
+const devName = portfolioConfig.devName
+const showParticles = portfolioConfig.showParticles
 
 function FrontPage() {
     const { height, width } = useWindowDimensions();
@@ -56,8 +59,10 @@ function FrontPage() {
                                 },
                             }
                         }
-                    />
-                    :
+                    />: null
+                }
+                {
+                    width < 620 && showParticles ?
                     <Particles className="particleCss"
                         params={
                             {
@@ -77,7 +82,7 @@ function FrontPage() {
                                 }
                             }
                         }
-                    />
+                    /> : null
                 }
                 <div className="row mt4 center-self">
                     <div className="column float-left center-self">

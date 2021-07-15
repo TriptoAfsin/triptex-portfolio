@@ -1,11 +1,16 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+//config import
+import portfolioInfo from '../../portfolioConfig'
+
+const navbarBgClass = `nav-container ${portfolioInfo.navbar.colorClassName}`
+
 
 function Navbar() {
     return (
         <React.Fragment>
-            <nav className="nav-container neonBlue">
+            <nav className={navbarBgClass}>
                 <Link to="/" className="logo bold">Afshin Nahian Tripto</Link>
                 <input className="menu-btn" type="checkbox" id="menu-btn" />
                 <label className="menu-icon" for="menu-btn"><span className="navicon"></span></label>

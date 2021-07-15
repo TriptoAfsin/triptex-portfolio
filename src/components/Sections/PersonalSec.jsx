@@ -1,12 +1,14 @@
 import React from 'react'
 
+//config import
+import portfolioInfo from '../../portfolioConfig'
+
 function PersonalSec() {
     return (
         <div className="mb4 pad2">
                     <p className="bold txt-xxl mt2">About Me</p>
                     <p className="txt-lg mt4 mb4">
-                        I’m Afshin Nahian Tripto , I’m a freelance web developer and an engineering student who is passionate about tech and loves to learn. 
-                        I love to share my knowledge and experiences. I'm a firm believer of <i>"Change starts from you"</i>
+                        {portfolioInfo.aboutMe}
                     </p>
         </div>
     )
