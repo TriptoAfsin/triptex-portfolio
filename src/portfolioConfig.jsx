@@ -4,7 +4,7 @@ let portfolioInfo = {
     showParticles: true,
 
     //typeWriter
-    typeWriterStringsArr : ["a Freelance Webdeveloper", "an Engineering Student", "a Learner", "a Teacher"],
+    typeWriterStringsArr: ["a Freelance Webdeveloper", "an Engineering Student", "a Learner", "a Teacher"],
 
     aboutMe: `I’m Afshin Nahian Tripto , I’m a freelance web developer and an engineering student who is passionate about tech and loves to learn. 
     I love to share my knowledge and experiences. I'm a firm believer of "Change starts from you"`,
@@ -25,6 +25,7 @@ let portfolioInfo = {
 
     //navbar
     navbar: {
+        logoName: `Afshin Nahian Tripto`,
         /*
         Available Colors - 
 
@@ -58,8 +59,7 @@ let portfolioInfo = {
         redGradient
         greenGradient
         purpleGradient     */
-
-        colorClassName:`neonBlue`,
+        colorClassName: `neonBlue`,
     },
 
     //footer
@@ -67,19 +67,9 @@ let portfolioInfo = {
         siteMoto: `✅ Be the change`,
         footerTitle: `Afshin Nahian Tripto`,
         footerAdrress: `Dhaka, Bangladesh`,
-        colorClassName:`purpleGradient`, 
+        colorClassName: `purpleGradient`,
     }
 }
 
 
 export default portfolioInfo
-
-/*
-module.exports = {
-    pageTitle: portfolioInfo.pageTitle,
-    devName: portfolioInfo.devName,
-    aboutMe: portfolioInfo.aboutMe,
-    educationalSection: portfolioInfo.educationalSection,
-    socialLinks: portfolioInfo.socialLinks
-}
-*/

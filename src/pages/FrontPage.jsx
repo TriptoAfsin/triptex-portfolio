@@ -23,6 +23,8 @@ import ProjectsSec from '../components/Sections/ProjectsSec';
 import devWebpImg from '../../imgs/dev.webp'
 import devjpgImg from '../../imgs/dev.jpg'
 
+
+
 //additional css
 import '../components/css/additionalCss.css'
 
@@ -87,7 +89,7 @@ function FrontPage() {
                 <div className="row mt4 center-self">
                     <div className="column float-left center-self">
                         <picture>
-                            <source srcset={devWebpImg} />
+                            <source srcSet={devWebpImg} />
                             <img src={devjpgImg} className="rounded-img shadow" alt="TriptoAfsin" width="180px" height="180px" />
                         </picture>
                     </div>

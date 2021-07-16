@@ -11,7 +11,7 @@ function Navbar() {
     return (
         <React.Fragment>
             <nav className={navbarBgClass}>
-                <Link to="/" className="logo bold">Afshin Nahian Tripto</Link>
+                <Link to="/" className="logo bold">{portfolioInfo.navbar.logoName}</Link>
                 <input className="menu-btn" type="checkbox" id="menu-btn" />
                 <label className="menu-icon" for="menu-btn"><span className="navicon"></span></label>
                 <ul className="menu">
