@@ -4,7 +4,7 @@ import SocialSection from '../Sections/SocialSection';
 //config import
 import portfolioInfo from '../../portfolioConfig';
 
-import useWindowDimensions from '../Hooks/ResizeHandler'
+import useWindowDimensions from '../../Hooks/ResizeHandler'
 
 let date = new Date();
 let currentYear = date.getFullYear();

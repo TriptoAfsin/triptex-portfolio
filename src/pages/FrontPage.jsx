@@ -19,7 +19,7 @@ import TypeWriterSec from '../components/Sections/TypeWriterSec';
 import Footer from '../components/layout/Footer';
 import MobileSkills from '../components/Sections/MobileSkills';
 
-import useWindowDimensions from '../components/Hooks/ResizeHandler'
+import useWindowDimensions from '../Hooks/ResizeHandler'
 import ProjectsSec from '../components/Sections/ProjectsSec';
 
 //images

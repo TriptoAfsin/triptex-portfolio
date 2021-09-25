@@ -1,5 +1,5 @@
 import React from 'react'
-import useWindowDimensions from '../Hooks/ResizeHandler'
+import useWindowDimensions from '../../Hooks/ResizeHandler'
 import { SocialIcon } from 'react-social-icons';
 
 //config import 

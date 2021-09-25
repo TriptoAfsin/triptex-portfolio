@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import {Helmet} from "react-helmet";
-import DataProvider from '../components/DataHandler/DataProvider'
+import DataProvider from '../DataHandler/DataProvider'
 import '../components/css/loader.css'
 import '../components/css/additionalCss.css'
 const pageTitle = "Projects - TriptoAfsin";
