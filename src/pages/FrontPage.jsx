@@ -5,6 +5,9 @@ import Particles from 'react-particles-js'; //particles js
 //config import
 import portfolioConfig from '../portfolioConfig';
 
+//random stuff
+import randomizers from 'simple-random-stuff'
+
 //sections
 import EducationSec from '../components/Sections/EducationSec';
 import PersonalSec from '../components/Sections/PersonalSec';
@@ -27,6 +30,7 @@ import devjpgImg from '../../imgs/dev.jpg'
 
 //additional css
 import '../components/css/additionalCss.css'
+import ExperienceSec from '../components/Sections/ExperienceSec';
 
 const pageTitle = portfolioConfig.pageTitle
 const devName = portfolioConfig.devName
@@ -124,6 +128,7 @@ function FrontPage() {
                     </div>
                 </div>
             </div>
+            <ExperienceSec></ExperienceSec>
             <Footer></Footer>
         </React.Fragment>
     )
