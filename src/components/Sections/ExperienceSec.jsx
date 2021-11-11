@@ -9,7 +9,7 @@ function ExperienceSec() {
             <div className="card-container">
                 <div className="pad4 mt4">
                     <p class="txt-xxl center-txt orangeGradient pad2">Delivery Hobe</p>
-                    <p class="txt-lg center-txt">Node JS Developer</p>
+                    <p class="txt-lg center-txt">JavaScript Developer</p>
                     <p class="card-txt italic mt2 center-txt">
                         I've been working as a junior node js developer at "Delivery Hobe" since October, 2021
                     </p>

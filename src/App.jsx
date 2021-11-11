@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
-import { HashRouter as Router, Switch, Route } from 'react-router-dom';
-import ScrollToTopHandler from './components/Hooks/ScrollToTopHandler';
-import Footer from './components/layout/Footer';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import ScrollToTopHandler from './Hooks/ScrollToTopHandler';
+//import Footer from './components/layout/Footer';
 import Navbar from './components/layout/Navbar';
 import Contact from './pages/Contact';
 import CV from './pages/CV';
@@ -17,17 +17,17 @@ function App() {
     <Router >
       <Navbar></Navbar>
       <Fragment>
-        <ScrollToTopHandler></ScrollToTopHandler>
-        <Switch>
-          <Route path='/' exact component={FrontPage}></Route>
-          <Route path='/cv' exact component={CV}></Route>
-          <Route path='/projects' exact component={Projects}></Route>
-          <Route path='/contact' exact component={Contact}></Route>
-          <Route path='/chatraChatExpanded' exact component={FrontPage}></Route>
+      <ScrollToTopHandler />
+        <Routes>
+          <Route path='/' element={<FrontPage />}></Route>
+          <Route path='/cv' element={<CV/>}></Route>
+          <Route path='/projects' element={<Projects/>}></Route>
+          <Route path='/contact' element={<Contact/>}></Route>
+          <Route path='/chatraChatExpanded' element={<FrontPage/>}></Route>
 
           /*404 route*/ */
-          <Route path="" component={NotFound} />
-        </Switch>
+          <Route path="" component={<NotFound/>} />
+        </Routes>
       </Fragment>
 
     </Router>

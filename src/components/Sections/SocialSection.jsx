@@ -11,12 +11,9 @@ const LikedinUrl = portfolioInfo.socialLinks.socialLinkedin;
 const mailUrl = portfolioInfo.socialLinks.socialMail;
 
 function SocialSection() {
-
     const { height, width } =  useWindowDimensions();
-
-
     return (
-        <React.Fragment>
+        <>
             {width <= 600 ?  <a href={githubUrl} className="pad2"><img src="./imgs/git-new.png" alt="github" width="80%"/></a> : <p></p>}
             <div className="row-force mt5 fade center-self" >
                 <SocialIcon url={githubUrl} bgColor="#ffff" className="hide-on-mobile mr2"/>
@@ -24,7 +21,7 @@ function SocialSection() {
                 <SocialIcon url={facebookUrl} bgColor="#ffff" className="hide-on-mobile mr2"/>
                 <SocialIcon url={mailUrl} bgColor="#ffff" className="hide-on-mobile"/>
             </div>
-        </React.Fragment>
+        </>
     )
 }
 
