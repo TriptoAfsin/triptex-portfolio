@@ -23,5 +23,6 @@ jobs:
       - name: ⛏ build
         run: |
           yarn build
-        branch: deploy
+        env:
+          BRANCH: build
 
