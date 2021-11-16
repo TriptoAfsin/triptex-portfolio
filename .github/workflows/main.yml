@@ -23,6 +23,11 @@ jobs:
       - name: ⛏ build
         run: |
           yarn build
+      - name: 🌿 Push
+        uses: s0/git-publish-subdir-action@develop
         env:
-          BRANCH: build
+          REPO: self
+          BRANCH: build # The branch name where you want to push the assets
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub will automatically add this - you don't need to bother getting a token
+          MESSAGE: "Build: ({sha}) {msg}" # The commit message
 
