@@ -4,7 +4,7 @@ on:
     branches:
       - main
 jobs:
-  install:
+  ⚙ install-build-push:
     runs-on: ubuntu-latest
     strategy:
       matrix:
