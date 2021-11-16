@@ -25,10 +25,10 @@ jobs:
           yarn build
       - name: ▶ Create Branch
         uses: peterjgrainger/action-create-branch@v2.0.1
-          env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          with:
-            branch: 'build'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          branch: 'build'
       - name: 🌿 Push
         uses: s0/git-publish-subdir-action@develop
         env:
