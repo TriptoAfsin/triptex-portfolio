@@ -20,22 +20,3 @@ jobs:
           yarn
         env:
           CI: true
-
-    build-and-deploy:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout
-          uses: actions/checkout@main
-
-        - name: Build 
-          run: |
-            yarn build
-          branch: Deploy  
-
-        - name: 📂 Sync files
-          uses: SamKirkland/FTP-Deploy-Action@4.1.0
-          with:
-            server: ftp.triptex.me
-            username: ${{ secrets.ftp_username }}
-            password: ${{ secrets.ftp_password }}
-
