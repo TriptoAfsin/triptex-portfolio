@@ -1,4 +1,4 @@
-name: Build and Deploy
+name: 👨‍🔧 Build and Push to Build Branch
 on:
   push:
     branches:
@@ -23,13 +23,13 @@ jobs:
       - name: ⛏ build
         run: |
           yarn build
-      - name: ▶ Create Branch
+      - name: 🌴 Create Branch
         uses: peterjgrainger/action-create-branch@v2.0.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           branch: 'build'
-      - name: 🌿 Push
+      - name: 💨 Push
         uses: s0/git-publish-subdir-action@develop
         env:
           REPO: self
@@ -37,11 +37,4 @@ jobs:
           FOLDER: dist # The directory where your assets are generated
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub will automatically add this - you don't need to bother getting a token
           MESSAGE: "Build: ({sha}) {msg}" # The commit message
-      - name: 📂 Push files to FTP
-        uses: SamKirkland/FTP-Deploy-Action@4.1.0
-        with:
-          server: sftp://server9.hostever.com:1004
-          username: ${{ secrets.ftp_username }}
-          password: ${{ secrets.ftp_password }}
-          server-dir: /public_html/github_actions_upload/
 
