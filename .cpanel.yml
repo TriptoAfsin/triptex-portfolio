@@ -1,0 +1,5 @@
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/triptexm/public_html/testDeploy
+    - /bin/cp index.html $DEPLOYPATH
+    - /bin/cp -R assets $DEPLOYPATH
