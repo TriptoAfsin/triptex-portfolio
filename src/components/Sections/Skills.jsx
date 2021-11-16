@@ -14,13 +14,11 @@ import {
     SiCss3, 
     SiJavascript, 
     SiReact, 
-    SiNextDotJs, 
     SiPostgresql, 
     SiMysql, 
     SiGithub, 
     SiHeroku
 } from 'react-icons/si';
-
 
 function Skills() {
     return (
