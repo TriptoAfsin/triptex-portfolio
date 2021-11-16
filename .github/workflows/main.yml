@@ -43,5 +43,5 @@ jobs:
           server: 173.231.17.18:21
           username: ${{ secrets.ftp_username }}
           password: ${{ secrets.ftp_password }}
-          server-dir: /public_html/github_actions_upload
+          server-dir: /public_html/github_actions_upload/
 
