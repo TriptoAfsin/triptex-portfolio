@@ -38,7 +38,7 @@ jobs:
         with:
           server: server9.hostever.com
           port: 1004
-          protocol: sftp
+          protocol: ftps-legacy
           username: ${{ secrets.ftp_username }}
           password: ${{ secrets.ftp_password }}
           server-dir: public_html/testDeploy/
