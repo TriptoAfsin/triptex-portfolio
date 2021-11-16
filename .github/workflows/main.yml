@@ -36,8 +36,9 @@ jobs:
         env:
           BRANCH: build
         with:
-          server: sftp://server9.hostever.com
+          server: server9.hostever.com
           port: 1004
+          protocol: sftp
           username: ${{ secrets.ftp_username }}
           password: ${{ secrets.ftp_password }}
           server-dir: public_html/testDeploy/
