@@ -131,7 +131,7 @@ function Projects() {
                   key={element.id}
                 >
                   {imgLoading ? (
-                    <SkeletonTheme color="#202020" highlightColor="#8d95a1">
+                    <SkeletonTheme color="#cbdbf5" highlightColor="#616469" baseColor="#1e1e1e">
                       <Skeleton
                         width={width < 600 ? "90%" : "90%"}
                         height={width < 600 ? 180 : 180}

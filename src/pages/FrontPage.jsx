@@ -92,16 +92,16 @@ function FrontPage() {
         ) : null}
         <div className="row mt4 center-self">
           <div className="column float-left center-self">
-            {imgLoading ? (
+            {imgLoading && width < 600 ? (
               <SkeletonTheme color="#202020" highlightColor="#8d95a1">
-                <Skeleton circle={true} width={width < 600 ? 300 : 180} height={width < 600 ? 300 : 180} duration={1} />
+                <Skeleton circle={true} width={width < 600 ? 320 : 180} height={width < 600 ? 320 : 180} duration={1} />
               </SkeletonTheme>
             ) : (
               ""
             )}
             <picture>
               <source
-                srcSet="https://i.imgur.com/6p9Pilf.jpg"
+                srcSet={devWebpImg}
                 className="rounded-img shadow"
                 onLoad={() => setImgLoading(false)}
               />
