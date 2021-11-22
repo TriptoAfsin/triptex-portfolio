@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Helmet } from "react-helmet";
 import Particles from "react-particles-js"; //particles js
 
@@ -26,6 +26,10 @@ import ProjectsSec from "../components/Sections/ProjectsSec";
 import devWebpImg from "../../imgs/dev.webp";
 import devjpgImg from "../../imgs/dev.jpg";
 
+//skeleton
+import Skeleton, {SkeletonTheme } from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
+
 //additional css
 import "../components/css/additionalCss.css";
 import ExperienceSec from "../components/Sections/ExperienceSec";
@@ -36,6 +40,7 @@ const showParticles = portfolioConfig.showParticles;
 
 function FrontPage() {
   const { height, width } = useWindowDimensions();
+  const [ imgLoading, setImgLoading] = useState(true)
 
   return (
     <React.Fragment>
@@ -87,14 +92,26 @@ function FrontPage() {
         ) : null}
         <div className="row mt4 center-self">
           <div className="column float-left center-self">
+            {imgLoading ? (
+              <SkeletonTheme color="#202020" highlightColor="#8d95a1">
+                <Skeleton circle={true} width={width < 600 ? 300 : 180} height={width < 600 ? 300 : 180} duration={1} />
+              </SkeletonTheme>
+            ) : (
+              ""
+            )}
             <picture>
-              <source srcSet={devWebpImg} />
+              <source
+                srcSet="https://i.imgur.com/6p9Pilf.jpg"
+                className="rounded-img shadow"
+                onLoad={() => setImgLoading(false)}
+              />
               <img
                 src={devjpgImg}
                 className="rounded-img shadow"
                 alt="TriptoAfsin"
                 width="180px"
                 height="180px"
+                onLoad={() => setImgLoading(false)}
               />
             </picture>
           </div>

@@ -5,10 +5,20 @@ import "../components/css/loader.css";
 import "../components/css/additionalCss.css";
 const pageTitle = "Projects - TriptoAfsin";
 
+import useWindowDimensions from "../Hooks/ResizeHandler";
+
+//skeleton
+import Skeleton, {SkeletonTheme } from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
+
 function Projects() {
+
+  const { height, width } = useWindowDimensions();
+
   const [loading, setLoading] = useState(true);
   const [query, setQuery] = useState("");
   const [match, setMatch] = useState("");
+  const [ imgLoading, setImgLoading] = useState(true)
   const repoData = DataProvider(
     "https://triptoafsin.github.io/API-Host/myProjects.json"
   );
@@ -110,7 +120,7 @@ function Projects() {
               placeholder="Search..."
               onChange={e => setQuery(e.target.value)}
               value={query}
-              style={{width:'320px', maxWidth: '90%'}}
+              style={{ width: "320px", maxWidth: "90%" }}
             ></input>
           </div>
           <div className="card-container" id="card-container">
@@ -120,14 +130,30 @@ function Projects() {
                   className={"card-vertical floatIn greyGradient"}
                   key={element.id}
                 >
-                  <img src={element.img} alt="" className="card-img" />
+                  {imgLoading ? (
+                    <SkeletonTheme color="#202020" highlightColor="#8d95a1">
+                      <Skeleton
+                        width={width < 600 ? "90%" : "90%"}
+                        height={width < 600 ? 180 : 180}
+                        duration={1}
+                      />
+                    </SkeletonTheme>
+                  ) : (
+                    ""
+                  )}
+                  <img src={element.img} alt="" className="card-img" onLoad={() => setImgLoading(false)}/>
                   <p className="card-title txt-xl">{element.name}</p>
                   <div className="mt4">
                     <p className="card-txt">{element.about}</p>
                     {element.techUsed.map(tech => {
-                        //console.log(`${element.id}-${tech}`)
+                      //console.log(`${element.id}-${tech}`)
                       return (
-                        <p className="green rounded tag mt1 ml1" key={`${element.id}-${tech}`}>{tech}</p>
+                        <p
+                          className="green rounded tag mt1 ml1"
+                          key={`${element.id}-${tech}`}
+                        >
+                          {tech}
+                        </p>
                       );
                     })}
 

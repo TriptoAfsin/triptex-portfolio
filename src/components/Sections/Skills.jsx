@@ -17,7 +17,8 @@ import {
     SiPostgresql, 
     SiMysql, 
     SiGithub, 
-    SiHeroku
+    SiHeroku,
+    SiNextDotJs 
 } from 'react-icons/si';
 
 function Skills() {
