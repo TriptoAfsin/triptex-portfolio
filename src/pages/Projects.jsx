@@ -133,9 +133,10 @@ function Projects() {
                   {imgLoading ? (
                     <SkeletonTheme color="#cbdbf5" highlightColor="#616469" baseColor="#1e1e1e">
                       <Skeleton
-                        width={width < 600 ? "90%" : "90%"}
+                        width={width < 600 ? "95%" : "94%"}
                         height={width < 600 ? 180 : 180}
                         duration={1}
+                        className="mt1 mr1 ml1"
                       />
                     </SkeletonTheme>
                   ) : (
