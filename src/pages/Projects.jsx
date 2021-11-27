@@ -10,6 +10,7 @@ import useWindowDimensions from "../Hooks/ResizeHandler";
 //skeleton
 import Skeleton, {SkeletonTheme } from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
+import SpinnerLoader from "../components/SpinnerLoader";
 
 function Projects() {
 
@@ -91,18 +92,7 @@ function Projects() {
           <title>{pageTitle}</title>
         </Helmet>
         <div className="center-self mt4">
-          <a>
-            <div className="lds-roller">
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
-          </a>
+         <SpinnerLoader></SpinnerLoader>
         </div>
       </React.Fragment>
     );

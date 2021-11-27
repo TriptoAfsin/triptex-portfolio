@@ -1,16 +1,18 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { Helmet } from "react-helmet";
-import Particles from "react-particles-js"; //particles js
+import Particles  from "react-particles-js"; //particles js
 
 //config import
 import portfolioConfig from "../portfolioConfig";
 
 //random stuff
-import randomizers from "simple-random-stuff";
+//import randomizers from "simple-random-stuff";
 
 //sections
+//const EducationSec = lazy(() => import("../components/Sections/EducationSec"));
 import EducationSec from "../components/Sections/EducationSec";
 import PersonalSec from "../components/Sections/PersonalSec";
+//const Skills = lazy(() => import("../components/Sections/Skills"));
 import Skills from "../components/Sections/Skills";
 import SocialSection from "../components/Sections/SocialSection";
 import TypeWriterSec from "../components/Sections/TypeWriterSec";
@@ -33,6 +35,7 @@ import 'react-loading-skeleton/dist/skeleton.css'
 //additional css
 import "../components/css/additionalCss.css";
 import ExperienceSec from "../components/Sections/ExperienceSec";
+//import SpinnerLoader from "../components/SpinnerLoader";
 
 const pageTitle = portfolioConfig.pageTitle;
 const devName = portfolioConfig.devName;
@@ -49,35 +52,14 @@ function FrontPage() {
         <title>{pageTitle}</title>
       </Helmet>
       <div className="content">
-        {width >= 620 && showParticles ? (
+        {showParticles ? (
           <Particles
             className="particleCss"
             params={{
               particles: {
                 number: {
-                  value: 25,
+                  value: width >= 600 ? 25 : 8,
                 },
-              },
-              interactivity: {
-                events: {
-                  onclick: {
-                    enable: true,
-                    mode: "repulse",
-                  },
-                },
-              },
-            }}
-          />
-        ) : null}
-        {width < 620 && showParticles ? (
-          <Particles
-            className="particleCss"
-            params={{
-              particles: {
-                number: {
-                  value: 8,
-                },
-                collisions: true,
               },
               interactivity: {
                 events: {
@@ -126,21 +108,18 @@ function FrontPage() {
           </div>
         </div>
         <div className="row">
-          <div className="width60 row mt5 mb5 border-white width40 center-txt">
+          <div className="width50 mt5 mb5 center-txt border-white" style={{maxWidth: '99vw', marginLeft: width < 600 ? '1px' : ''}}>
             <PersonalSec></PersonalSec>
           </div>
-          <div className="width60 row mt5 mb5 border-white center-self">
+          <div className="width50 mt5 mb5 center-self border-white" style={{maxWidth: '99vw', marginLeft: width < 600 ? '1px' : ''}}>
             <EducationSec></EducationSec>
           </div>
         </div>
-
-        <div className="row">
-          <div className="width50 mb4">
-            <div className="">
-              {width >= 820 ? <Skills></Skills> : <MobileSkills></MobileSkills>}
-            </div>
+        <div className={width > 900 ? "row": "column"}>
+          <div className={width > 900 ? "width50 mb4" : ""}>
+              {width >= 810 ? <Skills></Skills> : <MobileSkills></MobileSkills>}
           </div>
-          <div className="width50 mb4">
+          <div className={width > 900 ? "width50 mb4" : ""}>
             <ProjectsSec></ProjectsSec>
           </div>
         </div>
@@ -155,6 +134,9 @@ const styles = {
   height100: {
     height: "100%",
   },
+  maxWidth100: {
+    maxWidth: "100vw"
+  }
 };
 
 export default React.memo(FrontPage);
