@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, lazy, Suspense } from "react";
 import { Helmet } from "react-helmet";
-import Particles  from "react-particles-js"; //particles js
+//import Particles  from "react-particles-js"; //particles js
+const Particles = lazy(() => import("react-particles-js"));
 
 //config import
 import portfolioConfig from "../portfolioConfig";
@@ -53,6 +54,7 @@ function FrontPage() {
       </Helmet>
       <div className="content">
         {showParticles ? (
+          <Suspense fallback={<div className="mt2 center-txt txt-lg">⏳ Please Wait ...</div>}>
           <Particles
             className="particleCss"
             params={{
@@ -71,6 +73,7 @@ function FrontPage() {
               },
             }}
           />
+          </Suspense>
         ) : null}
         <div className="row mt4 center-self">
           <div className="column float-left center-self">
