@@ -54,7 +54,7 @@ function FrontPage() {
       </Helmet>
       <div className="content">
         {showParticles ? (
-          <Suspense fallback={<div className="mt2 center-txt txt-lg">⏳ Please Wait ...</div>}>
+          <Suspense fallback={<p></p>}>
           <Particles
             className="particleCss"
             params={{
