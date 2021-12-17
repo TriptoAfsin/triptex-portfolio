@@ -38,18 +38,26 @@ function Projects() {
   const matchList = document.getElementById("card-container");
 
   const searchQuery = libs => {
-    let matches = libs.filter(lib => {
-      const regex = new RegExp(`${query}`, "gi"); // ^: will search for which results starts with , gi:case insensitive search,RegExp: Regular Expression
-      return (
-        lib.name.match(regex) ||
-        lib.about.match(regex) ||
-        lib.terms.match(regex)
-      );
-    });
-    if (query.length > 0) {
-      outputHtml(matches);
-      setMatch(matches.length);
-      console.log(matches);
+    try{
+      let matches = libs.filter(lib => {
+        const regex = new RegExp(`${query}`, "gi"); // ^: will search for which results starts with , gi:case insensitive search,RegExp: Regular Expression
+        // const illegalSyntax = "</>"
+        // if(illegalSyntax.match(regex)){
+        //   console.log("🔴 Illegal syntax found !")
+        // }
+        return (
+          lib.name.match(regex) ||
+          lib.about.match(regex) ||
+          lib.terms.match(regex) 
+        );
+      });
+      if (query.length > 0) {
+        outputHtml(matches);
+        setMatch(matches.length);
+        console.log(matches);
+      }
+    }catch(err){
+        console.log(err)
     }
   };
 
